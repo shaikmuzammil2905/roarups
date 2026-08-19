@@ -164,7 +164,7 @@ export const ContactPage: React.FC = () => {
                 Fill out the form below and our educational counseling team will respond promptly.
               </p>
 
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4 max-w-full">
                 <div>
                   <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Your Name *</label>
                   <input
@@ -173,7 +173,7 @@ export const ContactPage: React.FC = () => {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="Enter your full name"
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-roar-blue bg-white text-sm"
+                    className="w-full max-w-full box-border px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-roar-blue bg-white text-sm"
                   />
                 </div>
 
@@ -186,7 +186,7 @@ export const ContactPage: React.FC = () => {
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       placeholder="10-digit mobile number"
-                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-roar-blue bg-white text-sm"
+                      className="w-full max-w-full box-border px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-roar-blue bg-white text-sm"
                     />
                   </div>
 
@@ -197,7 +197,7 @@ export const ContactPage: React.FC = () => {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="your.email@example.com"
-                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-roar-blue bg-white text-sm"
+                      className="w-full max-w-full box-border px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-roar-blue bg-white text-sm"
                     />
                   </div>
                 </div>
@@ -210,7 +210,7 @@ export const ContactPage: React.FC = () => {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Describe your subject requirements, grade level, or question..."
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-roar-blue bg-white text-sm resize-none"
+                    className="w-full max-w-full box-border px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-roar-blue bg-white text-sm resize-none"
                   />
                 </div>
 
