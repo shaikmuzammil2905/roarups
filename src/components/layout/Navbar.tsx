@@ -46,11 +46,11 @@ export const Navbar: React.FC = () => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group py-1">
+          <Link to="/" className="flex items-center gap-3 group py-1.5">
             <img
               src="/assets/roarups-logo.png"
               alt="ROARUPS Logo"
-              className="h-14 sm:h-16 lg:h-20 w-auto object-contain transition-transform group-hover:scale-105"
+              className="h-16 sm:h-20 lg:h-24 w-auto object-contain transition-transform group-hover:scale-105"
             />
           </Link>
 

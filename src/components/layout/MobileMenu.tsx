@@ -50,7 +50,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
               <img
                 src="/assets/roarups-logo.png"
                 alt="ROARUPS"
-                className="h-12 w-auto object-contain"
+                className="h-14 sm:h-16 w-auto object-contain"
               />
               <button
                 onClick={onClose}

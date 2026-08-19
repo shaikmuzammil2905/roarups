@@ -28,27 +28,39 @@ export const CurriculumBadges: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 sm:gap-6">
-          {curricula.map((curr, idx) => (
-            <motion.div
-              key={curr.name}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: idx * 0.1 }}
-              className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/15 text-center hover:bg-white/20 hover:border-roar-yellow/50 transition-all duration-300 group"
-            >
-              <span className="inline-block px-2.5 py-0.5 rounded-full bg-white/20 text-roar-yellow text-[10px] font-bold uppercase tracking-wider mb-2">
-                {curr.badge}
-              </span>
-              <h3 className="text-2xl font-black text-white group-hover:text-roar-yellow transition-colors mb-1">
-                {curr.name}
-              </h3>
-              <p className="text-slate-300 text-[11px] leading-tight">
-                {curr.fullName}
-              </p>
-            </motion.div>
-          ))}
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 sm:gap-6 items-stretch">
+          {curricula.map((curr, idx) => {
+            const isLastOnMobile = idx === 4;
+            return (
+              <motion.div
+                key={curr.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: idx * 0.1 }}
+                className={`flex flex-col justify-between items-center text-center p-5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 hover:bg-white/20 hover:border-roar-yellow/50 transition-all duration-300 group shadow-md min-h-[170px] ${
+                  isLastOnMobile ? 'col-span-2 md:col-span-1 max-w-sm justify-self-center w-full' : 'w-full'
+                }`}
+              >
+                {/* Badge Tag */}
+                <div className="mb-2">
+                  <span className="inline-block px-3 py-0.5 rounded-full bg-white/20 text-roar-yellow text-[10px] sm:text-xs font-bold uppercase tracking-wider">
+                    {curr.badge}
+                  </span>
+                </div>
+
+                {/* Name */}
+                <h3 className="text-lg sm:text-xl md:text-2xl font-black text-white group-hover:text-roar-yellow transition-colors mb-2 tracking-wide leading-tight break-words">
+                  {curr.name}
+                </h3>
+
+                {/* Full Description */}
+                <p className="text-slate-300 text-[11px] sm:text-xs leading-snug font-medium max-w-[200px]">
+                  {curr.fullName}
+                </p>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
