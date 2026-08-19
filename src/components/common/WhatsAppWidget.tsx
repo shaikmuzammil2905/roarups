@@ -16,7 +16,7 @@ export const WhatsAppWidget: React.FC = () => {
 
   return (
     <>
-      {/* Prominent & Highly Visible Floating WhatsApp Button */}
+      {/* Authentic WhatsApp Rounded Square Floating Button matching user's image */}
       <motion.div
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
@@ -25,20 +25,22 @@ export const WhatsAppWidget: React.FC = () => {
       >
         <button
           onClick={() => setIsOpen(true)}
-          className="relative bg-[#25D366] hover:bg-[#20bd5a] active:scale-95 text-white w-14 h-14 sm:w-16 sm:h-16 rounded-full shadow-[0_10px_25px_rgba(37,211,102,0.5)] transition-all duration-300 flex items-center justify-center border-2 border-white group"
+          className="relative group transition-transform hover:scale-110 active:scale-95 flex items-center justify-center rounded-2xl shadow-2xl focus:outline-none"
           aria-label="Official WhatsApp Support"
         >
           {/* Animated Glow Ring */}
-          <span className="absolute -inset-1 rounded-full bg-[#25D366] opacity-40 animate-ping pointer-events-none" />
+          <span className="absolute -inset-1 rounded-2xl bg-[#64C466] opacity-40 animate-ping pointer-events-none" />
 
-          {/* Official WhatsApp SVG Logo */}
-          <svg className="w-8 h-8 sm:w-9 sm:h-9 fill-white drop-shadow-md relative z-10" viewBox="0 0 24 24">
-            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.157 4.228 4.261-1.118zm13.111-5.719c-.317-.159-1.875-.926-2.166-1.032-.29-.106-.502-.159-.714.159-.211.318-.82 1.032-1.005 1.244-.185.212-.37.238-.687.079-.317-.159-1.341-.494-2.556-1.577-.945-.843-1.583-1.884-1.768-2.202-.185-.318-.02-.49.139-.648.143-.143.317-.37.476-.555.159-.185.212-.318.317-.529.106-.212.053-.397-.026-.555-.079-.159-.714-1.72-.979-2.356-.257-.619-.519-.536-.714-.546-.185-.01-.397-.01-.608-.01-.212 0-.555.079-.847.397-.291.318-1.111 1.085-1.111 2.646 0 1.561 1.137 3.069 1.296 3.281.159.212 2.24 3.42 5.427 4.796 2.054.887 2.859.98 3.896.827.632-.093 1.875-.767 2.139-1.508.264-.741.264-1.376.185-1.508-.079-.133-.291-.212-.608-.371z"/>
-          </svg>
-          
-          {/* Badge Label on Desktop */}
-          <span className="hidden lg:inline-block absolute right-full mr-3 bg-slate-900 text-white text-xs font-bold px-3 py-1.5 rounded-xl shadow-xl whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
-            WhatsApp Enquiry (6309763394)
+          {/* Exact Rounded Square WhatsApp Icon matching image */}
+          <img
+            src="/assets/whatsapp-icon.svg"
+            alt="WhatsApp Support"
+            className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl drop-shadow-xl border-2 border-white relative z-10"
+          />
+
+          {/* Tooltip on Desktop */}
+          <span className="hidden lg:inline-block absolute right-full mr-3 bg-slate-900 text-white text-xs font-bold px-3.5 py-2 rounded-xl shadow-xl whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
+            WhatsApp Support (6309763394)
           </span>
         </button>
       </motion.div>
@@ -66,11 +68,11 @@ export const WhatsAppWidget: React.FC = () => {
               {/* WhatsApp Green Chat Header */}
               <div className="bg-[#075E54] p-5 text-white flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-[#128C7E] flex items-center justify-center border-2 border-white/40 shadow-inner shrink-0">
-                    <svg className="w-6 h-6 fill-white" viewBox="0 0 24 24">
-                      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.157 4.228 4.261-1.118zm13.111-5.719c-.317-.159-1.875-.926-2.166-1.032-.29-.106-.502-.159-.714.159-.211.318-.82 1.032-1.005 1.244-.185.212-.37.238-.687.079-.317-.159-1.341-.494-2.556-1.577-.945-.843-1.583-1.884-1.768-2.202-.185-.318-.02-.49.139-.648.143-.143.317-.37.476-.555.159-.185.212-.318.317-.529.106-.212.053-.397-.026-.555-.079-.159-.714-1.72-.979-2.356-.257-.619-.519-.536-.714-.546-.185-.01-.397-.01-.608-.01-.212 0-.555.079-.847.397-.291.318-1.111 1.085-1.111 2.646 0 1.561 1.137 3.069 1.296 3.281.159.212 2.24 3.42 5.427 4.796 2.054.887 2.859.98 3.896.827.632-.093 1.875-.767 2.139-1.508.264-.741.264-1.376.185-1.508-.079-.133-.291-.212-.608-.371z"/>
-                    </svg>
-                  </div>
+                  <img
+                    src="/assets/whatsapp-icon.svg"
+                    alt="WhatsApp"
+                    className="w-11 h-11 rounded-xl border border-white/40 shadow-inner shrink-0"
+                  />
                   <div>
                     <h3 className="font-extrabold text-base leading-tight">ROARUPS WhatsApp Support</h3>
                     <p className="text-[11px] text-emerald-200 flex items-center gap-1">
@@ -87,10 +89,10 @@ export const WhatsAppWidget: React.FC = () => {
                 </button>
               </div>
 
-              {/* Chat Content & Presets */}
+              {/* Chat Body & Presets */}
               <div className="p-5 space-y-4 bg-[#E5DDD5]/40 min-h-[200px]">
                 <div className="bg-white p-3.5 rounded-2xl shadow-sm border border-slate-100 max-w-[90%] space-y-1">
-                  <p className="text-xs font-bold text-[#075E54]">ROARUPS Team</p>
+                  <p className="text-xs font-bold text-[#075E54]">ROARUPS Academic Team</p>
                   <p className="text-xs text-slate-700 leading-relaxed">
                     Hello! How can we assist your tuition or academic enquiry today?
                   </p>
@@ -141,14 +143,12 @@ export const WhatsAppWidget: React.FC = () => {
                   onClick={() => handleStartChat(customMsg)}
                   className="w-full py-3.5 bg-[#25D366] hover:bg-[#20bd5a] text-white font-extrabold rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 text-sm"
                 >
-                  <svg className="w-5 h-5 fill-white" viewBox="0 0 24 24">
-                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.157 4.228 4.261-1.118zm13.111-5.719c-.317-.159-1.875-.926-2.166-1.032-.29-.106-.502-.159-.714.159-.211.318-.82 1.032-1.005 1.244-.185.212-.37.238-.687.079-.317-.159-1.341-.494-2.556-1.577-.945-.843-1.583-1.884-1.768-2.202-.185-.318-.02-.49.139-.648.143-.143.317-.37.476-.555.159-.185.212-.318.317-.529.106-.212.053-.397-.026-.555-.079-.159-.714-1.72-.979-2.356-.257-.619-.519-.536-.714-.546-.185-.01-.397-.01-.608-.01-.212 0-.555.079-.847.397-.291.318-1.111 1.085-1.111 2.646 0 1.561 1.137 3.069 1.296 3.281.159.212 2.24 3.42 5.427 4.796 2.054.887 2.859.98 3.896.827.632-.093 1.875-.767 2.139-1.508.264-.741.264-1.376.185-1.508-.079-.133-.291-.212-.608-.371z"/>
-                  </svg>
+                  <img src="/assets/whatsapp-icon.svg" alt="WhatsApp" className="w-5 h-5 rounded" />
                   <span>Start WhatsApp Chat (6309763394)</span>
                 </button>
 
                 <div className="flex items-center justify-between text-xs text-slate-500 px-2 pt-1">
-                  <span>Alternative Phone:</span>
+                  <span>Alternative Call:</span>
                   <a href="tel:9490988856" className="font-bold text-roar-blue hover:underline flex items-center gap-1">
                     <Phone className="w-3 h-3" /> 9490988856
                   </a>
