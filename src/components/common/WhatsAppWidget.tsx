@@ -16,26 +16,26 @@ export const WhatsAppWidget: React.FC = () => {
 
   return (
     <>
-      {/* Authentic WhatsApp Rounded Square Floating Button matching user's image */}
+      {/* Crisp WhatsApp Floating Button Matching Reference Image 5 Exactly */}
       <motion.div
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
-        transition={{ delay: 0.5, type: 'spring', stiffness: 260, damping: 20 }}
+        transition={{ delay: 0.4, type: 'spring', stiffness: 260, damping: 20 }}
         className="fixed bottom-20 right-4 sm:bottom-24 sm:right-6 lg:bottom-8 lg:right-8 z-50 flex items-center gap-2"
       >
         <button
           onClick={() => setIsOpen(true)}
-          className="relative group transition-transform hover:scale-110 active:scale-95 flex items-center justify-center rounded-2xl shadow-2xl focus:outline-none"
+          className="relative group transition-transform hover:scale-110 active:scale-95 flex items-center justify-center focus:outline-none"
           aria-label="Official WhatsApp Support"
         >
-          {/* Animated Glow Ring */}
-          <span className="absolute -inset-1 rounded-2xl bg-[#64C466] opacity-40 animate-ping pointer-events-none" />
+          {/* Subtle Pulse Animation */}
+          <span className="absolute -inset-1 rounded-3xl bg-[#25D366] opacity-35 animate-ping pointer-events-none" />
 
-          {/* Exact Rounded Square WhatsApp Icon matching image */}
+          {/* Exact WhatsApp Icon from Reference Image 5 */}
           <img
-            src="/assets/whatsapp-icon.svg"
+            src="/assets/whatsapp-icon.png"
             alt="WhatsApp Support"
-            className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl drop-shadow-xl border-2 border-white relative z-10"
+            className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl shadow-[0_10px_25px_rgba(37,211,102,0.45)] relative z-10 transition-shadow"
           />
 
           {/* Tooltip on Desktop */}
@@ -69,12 +69,12 @@ export const WhatsAppWidget: React.FC = () => {
               <div className="bg-[#075E54] p-5 text-white flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <img
-                    src="/assets/whatsapp-icon.svg"
+                    src="/assets/whatsapp-icon.png"
                     alt="WhatsApp"
-                    className="w-11 h-11 rounded-xl border border-white/40 shadow-inner shrink-0"
+                    className="w-12 h-12 rounded-xl shadow-md shrink-0"
                   />
                   <div>
-                    <h3 className="font-extrabold text-base leading-tight">ROARUPS WhatsApp Support</h3>
+                    <h3 className="font-extrabold text-base leading-tight">ROARUPS Academic Support</h3>
                     <p className="text-[11px] text-emerald-200 flex items-center gap-1">
                       <span className="w-2 h-2 rounded-full bg-[#25D366] animate-pulse" />
                       Online • 6309763394
@@ -89,7 +89,7 @@ export const WhatsAppWidget: React.FC = () => {
                 </button>
               </div>
 
-              {/* Chat Body & Presets */}
+              {/* Chat Content & Presets */}
               <div className="p-5 space-y-4 bg-[#E5DDD5]/40 min-h-[200px]">
                 <div className="bg-white p-3.5 rounded-2xl shadow-sm border border-slate-100 max-w-[90%] space-y-1">
                   <p className="text-xs font-bold text-[#075E54]">ROARUPS Academic Team</p>
@@ -143,7 +143,7 @@ export const WhatsAppWidget: React.FC = () => {
                   onClick={() => handleStartChat(customMsg)}
                   className="w-full py-3.5 bg-[#25D366] hover:bg-[#20bd5a] text-white font-extrabold rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 text-sm"
                 >
-                  <img src="/assets/whatsapp-icon.svg" alt="WhatsApp" className="w-5 h-5 rounded" />
+                  <img src="/assets/whatsapp-icon.png" alt="WhatsApp" className="w-5 h-5 rounded-lg" />
                   <span>Start WhatsApp Chat (6309763394)</span>
                 </button>
 
