@@ -9,7 +9,7 @@ export const BottomNav: React.FC = () => {
     { name: 'Home', path: '/', icon: Home },
     { name: 'About Us', path: '/about', icon: UserCheck },
     { name: 'Services', path: '/services', icon: BookOpen },
-    { name: 'Enquiree', path: '/register', icon: UserPlus },
+    { name: 'Enquiry', path: '/register', icon: UserPlus },
     { name: 'Contact', path: '/contact', icon: PhoneCall },
   ];
 
