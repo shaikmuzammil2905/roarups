@@ -71,7 +71,7 @@ export const Footer: React.FC = () => {
                 <Link to="/services" className="text-slate-300 hover:text-roar-yellow transition-colors">Our Services</Link>
               </li>
               <li>
-                <Link to="/register" className="text-slate-300 hover:text-roar-yellow transition-colors">Register Now</Link>
+                <Link to="/register" className="text-slate-300 hover:text-roar-yellow transition-colors">Enquiry Now</Link>
               </li>
               <li>
                 <Link to="/reviews" className="text-slate-300 hover:text-roar-yellow transition-colors">Reviews & Testimonials</Link>

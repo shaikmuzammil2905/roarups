@@ -55,9 +55,9 @@ export const HeroSection: React.FC = () => {
               </Link>
               <Link
                 to="/register"
-                className="w-full sm:w-auto px-8 py-3.5 bg-white hover:bg-slate-50 text-roar-blue border-2 border-roar-blue font-bold rounded-xl shadow-sm hover:shadow-md transition-all flex items-center justify-center gap-2"
+                className="w-full sm:w-auto px-8 py-4 bg-white text-roar-navy border-2 border-roar-blue font-extrabold rounded-full shadow-lg hover:bg-blue-50 transition-all duration-300 text-center text-sm sm:text-base"
               >
-                <span>Register Now</span>
+                Enquiry Now
               </Link>
             </div>
 

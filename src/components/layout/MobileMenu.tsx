@@ -18,7 +18,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
     { name: 'Home Tuitions', path: '/services/home-tuitions', isSub: true },
     { name: 'Tuition Center', path: '/services/tuition-center', isSub: true },
     { name: 'Online Classes', path: '/services/online-classes', isSub: true },
-    { name: 'Register', path: '/register' },
+    { name: 'Enquiry', path: '/register' },
     { name: 'Reviews', path: '/reviews' },
     { name: 'Contact Us', path: '/contact' },
   ];
@@ -92,7 +92,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                 onClick={onClose}
                 className="block text-center w-full py-3 bg-roar-yellow hover:bg-roar-yellow-hover text-roar-navy font-bold rounded-xl shadow-md transition-colors"
               >
-                Get Started / Register
+                Get Started / Enquiry
               </Link>
               
               <div className="grid grid-cols-2 gap-2 text-xs">
