@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, ChevronDown } from 'lucide-react';
 import { MobileMenu } from './MobileMenu';
 
 export const Navbar: React.FC = () => {
@@ -31,7 +31,6 @@ export const Navbar: React.FC = () => {
       ],
     },
     { name: 'Register', path: '/register' },
-    { name: 'Login', path: '/login' },
     { name: 'Contact Us', path: '/contact' },
   ];
 
@@ -40,17 +39,17 @@ export const Navbar: React.FC = () => {
       <header
         className={`sticky top-0 z-40 transition-all duration-300 ${
           isScrolled
-            ? 'bg-white/95 backdrop-blur-md shadow-md py-3'
-            : 'bg-white py-4 border-b border-slate-100'
+            ? 'bg-white/95 backdrop-blur-md shadow-md py-2.5'
+            : 'bg-white py-3 border-b border-slate-100'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group py-1.5">
+          {/* Large Prominent Logo for Mobile & Desktop */}
+          <Link to="/" className="flex items-center gap-3 group py-1">
             <img
               src="/assets/roarups-logo.png"
               alt="ROARUPS Logo"
-              className="h-16 sm:h-20 lg:h-24 w-auto object-contain transition-transform group-hover:scale-105"
+              className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-transform group-hover:scale-105"
             />
           </Link>
 
@@ -135,10 +134,10 @@ export const Navbar: React.FC = () => {
           <div className="flex lg:hidden items-center">
             <button
               onClick={() => setIsMobileMenuOpen(true)}
-              className="p-2 rounded-lg text-roar-navy hover:bg-slate-100 transition-colors"
+              className="p-2.5 rounded-xl text-roar-navy hover:bg-slate-100 transition-colors"
               aria-label="Open Mobile Menu"
             >
-              <Menu className="w-7 h-7" />
+              <Menu className="w-8 h-8" />
             </button>
           </div>
         </div>

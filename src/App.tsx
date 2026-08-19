@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, Link } from 'react-router-dom';
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
 import { ServicesPage } from './pages/ServicesPage';
@@ -7,7 +7,6 @@ import { HomeTuitionsPage } from './pages/HomeTuitionsPage';
 import { TuitionCenterPage } from './pages/TuitionCenterPage';
 import { OnlineClassesPage } from './pages/OnlineClassesPage';
 import { RegisterPage } from './pages/RegisterPage';
-import { LoginPage } from './pages/LoginPage';
 import { ContactPage } from './pages/ContactPage';
 import { ReviewsPage } from './pages/ReviewsPage';
 import { DashboardPage } from './pages/DashboardPage';
@@ -44,7 +43,7 @@ export function App() {
         <Route path="/services/tuition-center" element={<TuitionCenterPage />} />
         <Route path="/services/online-classes" element={<OnlineClassesPage />} />
         <Route path="/register" element={<RegisterPage />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/login" element={<Navigate to="/register" replace />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/reviews" element={<ReviewsPage />} />
         <Route path="/dashboard/:role?" element={<DashboardPage />} />

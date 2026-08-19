@@ -19,7 +19,6 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
     { name: 'Tuition Center', path: '/services/tuition-center', isSub: true },
     { name: 'Online Classes', path: '/services/online-classes', isSub: true },
     { name: 'Register', path: '/register' },
-    { name: 'Login', path: '/login' },
     { name: 'Reviews', path: '/reviews' },
     { name: 'Contact Us', path: '/contact' },
   ];
@@ -45,12 +44,12 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
             className="fixed top-0 right-0 bottom-0 w-4/5 max-w-sm bg-white shadow-2xl flex flex-col justify-between z-10"
           >
-            {/* Header */}
+            {/* Header with Prominent Logo */}
             <div className="p-4 border-b border-slate-100 flex items-center justify-between">
               <img
                 src="/assets/roarups-logo.png"
                 alt="ROARUPS"
-                className="h-14 sm:h-16 w-auto object-contain"
+                className="h-16 w-auto object-contain"
               />
               <button
                 onClick={onClose}
