@@ -20,9 +20,9 @@ export const PrivacyPolicyPage: React.FC = () => {
             ROARUPS collects personal information provided voluntarily by tutors, students, and parents during registration, contact inquiries, and review submissions. This includes names, mobile numbers, class/grade requirements, and location preferences in Hyderabad.
           </p>
 
-          <h2 className="text-xl font-bold text-roar-navy pt-2">2. Confidentiality & Aadhaar Protection</h2>
+          <h2 className="text-xl font-bold text-roar-navy pt-2">2. Data Privacy & Protection</h2>
           <p className="text-sm leading-relaxed">
-            Tutor identification documents (such as Aadhaar uploads) are treated with strict confidentiality. Aadhaar information is stored securely in private cloud storage with Row-Level Security (RLS) policies and is accessible only to authorized administrators for background verification. Aadhaar data is never displayed publicly or shared with third parties.
+            User personal information and submitted registration details are treated with strict confidentiality and kept secure. User data is never displayed publicly without permission or shared with unauthorized third parties.
           </p>
 
           <h2 className="text-xl font-bold text-roar-navy pt-2">3. Data Usage</h2>

@@ -5,8 +5,7 @@ import { Modal } from '../components/common/Modal';
 import {
   submitTutorRegistration,
   submitStudentRegistration,
-  submitParentRegistration,
-  uploadAadhaarDocument
+  submitParentRegistration
 } from '../services/db';
 import { isSupabaseConfigured, supabase } from '../lib/supabase';
 import { UserCheck, GraduationCap, Users, ShieldAlert, Upload, CheckCircle2, ArrowLeft } from 'lucide-react';
@@ -41,7 +40,6 @@ export const RegisterPage: React.FC = () => {
     preferredTeachingMode: 'Both',
     location: '',
   });
-  const [aadhaarFile, setAadhaarFile] = useState<File | null>(null);
 
   // Student Form State
   const [studentForm, setStudentForm] = useState({
@@ -93,7 +91,6 @@ export const RegisterPage: React.FC = () => {
 
     try {
       let userId: string | null = null;
-      let aadhaarFilePath: string | null = null;
 
       // Supabase Auth Integration if configured
       if (isSupabaseConfigured && supabase) {
@@ -114,12 +111,6 @@ export const RegisterPage: React.FC = () => {
         if (authData.user) userId = authData.user.id;
       }
 
-      // Upload Aadhaar if provided
-      if (aadhaarFile && userId) {
-        const uploadRes = await uploadAadhaarDocument(aadhaarFile, userId);
-        if (uploadRes.filePath) aadhaarFilePath = uploadRes.filePath;
-      }
-
       const res = await submitTutorRegistration({
         user_id: userId,
         full_name: tutorForm.fullName,
@@ -132,7 +123,6 @@ export const RegisterPage: React.FC = () => {
         teaching_experience: tutorForm.teachingExperience,
         preferred_teaching_mode: tutorForm.preferredTeachingMode,
         location: tutorForm.location,
-        aadhaar_file_path: aadhaarFilePath,
       });
 
       if (!res.success) {
@@ -505,23 +495,6 @@ export const RegisterPage: React.FC = () => {
                         </button>
                       ))}
                     </div>
-                  </div>
-
-                  {/* Aadhaar Private Document Upload */}
-                  <div className="p-4 rounded-2xl bg-amber-50/70 border border-amber-200 space-y-2">
-                    <div className="flex items-center gap-2 text-amber-900 font-bold text-xs uppercase">
-                      <ShieldAlert className="w-4 h-4 text-amber-600" />
-                      <span>Confidential Aadhaar Verification</span>
-                    </div>
-                    <p className="text-xs text-slate-600">
-                      Aadhaar documents are strictly kept private in secure storage for verification only. They are never exposed publicly.
-                    </p>
-                    <input
-                      type="file"
-                      accept=".pdf,.png,.jpg,.jpeg"
-                      onChange={(e) => setAadhaarFile(e.target.files?.[0] || null)}
-                      className="block w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-roar-blue file:text-white hover:file:bg-roar-blue-hover"
-                    />
                   </div>
 
                   <button

@@ -24,7 +24,6 @@ export interface TutorRegistration {
   teaching_experience: string;
   preferred_teaching_mode: string;
   location: string;
-  aadhaar_file_path?: string | null;
   status?: RegistrationStatus;
   created_at?: string;
 }

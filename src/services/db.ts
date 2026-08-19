@@ -42,7 +42,6 @@ export async function submitTutorRegistration(data: TutorRegistration) {
         teaching_experience: data.teaching_experience,
         preferred_teaching_mode: data.preferred_teaching_mode,
         location: data.location,
-        aadhaar_file_path: data.aadhaar_file_path || null,
         status: 'pending'
       }
     ]);
@@ -200,29 +199,5 @@ export async function fetchWebsiteSettings(): Promise<WebsiteSettings> {
     return settings;
   } catch {
     return DEFAULT_SETTINGS;
-  }
-}
-
-// Secure Aadhaar Document Upload (Private Bucket)
-export async function uploadAadhaarDocument(file: File, userId: string): Promise<{ success: boolean; filePath?: string; error?: string }> {
-  if (!isSupabaseConfigured || !supabase) {
-    return { success: false, error: MISSING_ENV_ERROR };
-  }
-
-  try {
-    const fileExt = file.name.split('.').pop();
-    const filePath = `private_aadhaar/${userId}_${Date.now()}.${fileExt}`;
-
-    const { error: uploadError } = await supabase.storage
-      .from('tutor-aadhaar-docs')
-      .upload(filePath, file, {
-        cacheControl: '3600',
-        upsert: false
-      });
-
-    if (uploadError) throw uploadError;
-    return { success: true, filePath };
-  } catch (err: any) {
-    return { success: false, error: err.message || "Aadhaar upload failed" };
   }
 }
