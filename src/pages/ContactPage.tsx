@@ -82,7 +82,18 @@ export const ContactPage: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             {/* Left Col: Details & Quick Action Cards */}
             <div className="lg:col-span-5 space-y-6">
-              <h2 className="text-2xl font-extrabold text-roar-navy border-b pb-3">Contact Details</h2>
+              <div className="flex items-center justify-between border-b pb-3">
+                <h2 className="text-2xl font-extrabold text-roar-navy">Contact Details</h2>
+                <a
+                  href="https://wa.me/916309763394"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3.5 py-1.5 rounded-full bg-emerald-100 text-emerald-700 hover:bg-emerald-200 font-bold text-xs flex items-center gap-1.5 transition-colors shadow-sm"
+                >
+                  <MessageSquare className="w-4 h-4 text-emerald-600 fill-emerald-600" />
+                  <span>WhatsApp Chat</span>
+                </a>
+              </div>
 
               {/* Address Card */}
               <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 flex items-start gap-4">

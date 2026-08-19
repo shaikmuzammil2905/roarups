@@ -6,6 +6,7 @@ import { Navbar } from './Navbar';
 import { Footer } from './Footer';
 import { BottomNav } from './BottomNav';
 import { SupabaseBanner } from '../common/SupabaseBanner';
+import { WhatsAppWidget } from '../common/WhatsAppWidget';
 
 interface PageLayoutProps {
   children: React.ReactNode;
@@ -19,7 +20,7 @@ export const PageLayout: React.FC<PageLayoutProps> = ({ children }) => {
   }, [pathname]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-roar-gray-50 text-roar-navy overflow-x-hidden">
+    <div className="min-h-screen flex flex-col bg-roar-gray-50 text-roar-navy overflow-x-hidden relative">
       <SupabaseBanner />
       <TopBar />
       <Navbar />
@@ -34,6 +35,7 @@ export const PageLayout: React.FC<PageLayoutProps> = ({ children }) => {
         {children}
       </motion.main>
 
+      <WhatsAppWidget />
       <Footer />
       <BottomNav />
     </div>
