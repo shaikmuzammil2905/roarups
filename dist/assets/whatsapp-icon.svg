@@ -1,10 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
-  <!-- Rounded Square Green Background matching reference -->
-  <rect x="0" y="0" width="100" height="100" rx="22" fill="#64C466" />
-  
-  <!-- Outer White Speech Bubble Ring with Tail -->
-  <path d="M 29 77.5 L 22 79.5 L 29 70.5 A 28 28 0 1 1 50 78 A 28 28 0 0 1 29 77.5 Z" fill="none" stroke="#FFFFFF" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round" />
-  
-  <!-- Inner White Solid Phone Handset -->
-  <path d="M 37 42 C 38 40 40 40 42 41 L 46 45 C 47.5 46.5 47.5 48 46 49.5 L 44 51.5 C 46.5 56 49.5 59 54 61.5 L 56 59.5 C 57.5 58 59 58 60.5 59 L 64.5 63 C 65.5 64 65.5 66 64.5 67 C 62.5 69.5 59 71 55 69.5 C 46 67.5 35 56.5 33 47.5 C 31.5 43.5 33 40 37 42 Z" fill="#FFFFFF" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="waGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#34E065"/>
+      <stop offset="100%" stop-color="#1DA851"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#1DA851" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Clean Green Rounded Square App Icon filling 100% canvas -->
+  <rect x="0" y="0" width="512" height="512" rx="115" fill="url(#waGrad)"/>
+
+  <!-- White Speech Bubble Ring + Tail -->
+  <path d="M 152 392 L 112 404 L 150 358 C 122 328 106 289 106 248 C 106 165 173 98 256 98 C 339 98 406 165 406 248 C 406 331 339 398 256 398 C 217 398 180 383 152 358 Z" 
+        fill="none" stroke="#FFFFFF" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Inner Phone Handset Solid White -->
+  <path d="M 194 204 C 199 194 209 194 219 199 L 239 219 C 246 226 246 234 239 241 L 228 252 C 240 274 257 291 279 303 L 290 292 C 297 285 305 285 312 292 L 332 312 C 337 317 337 327 332 332 C 321 345 303 353 282 344 C 235 334 178 277 168 230 C 159 209 167 191 180 180 Z" 
+        fill="#FFFFFF"/>
 </svg>
