@@ -28,11 +28,10 @@ export const HeroSection: React.FC = () => {
             </div>
 
             {/* Hero Main Headline */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-roar-navy tracking-tight leading-[1.15]">
-              <span className="text-roar-blue">Roar Home Tuitions</span>{' '}
-              <span className="text-roar-yellow font-black mx-1">|</span>{' '}
-              <br className="hidden sm:inline" />
-              <span className="text-roar-yellow">RoarUps</span>
+            <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-extrabold text-roar-navy tracking-tight leading-tight">
+              <span className="text-roar-blue whitespace-nowrap">Roar Home Tuitions</span>{' '}
+              <span className="text-roar-yellow font-black mx-0.5 sm:mx-1">|</span>{' '}
+              <span className="text-roar-yellow whitespace-nowrap">RoarUps</span>
             </h1>
 
             {/* Supporting Headline */}
