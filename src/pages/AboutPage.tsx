@@ -13,7 +13,7 @@ export const AboutPage: React.FC = () => {
           <span className="inline-block px-4 py-1 rounded-full bg-roar-blue/10 text-roar-blue font-bold text-xs uppercase tracking-wider mb-4">
             Our Story & Values
           </span>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-roar-navy tracking-tight mb-6">
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-amber-500 tracking-tight mb-6">
             About RoarUps
           </h1>
           <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-6 font-medium">
@@ -44,7 +44,7 @@ export const AboutPage: React.FC = () => {
                 <div className="w-14 h-14 rounded-2xl bg-roar-blue text-white flex items-center justify-center mb-6 shadow-md">
                   <Eye className="w-7 h-7" />
                 </div>
-                <h2 className="text-2xl font-extrabold text-roar-navy mb-4">Our Vision</h2>
+                <h2 className="text-2xl font-extrabold text-amber-500 mb-4">Our Vision</h2>
                 <p className="text-slate-700 text-base leading-relaxed">
                   "To create a learning environment where every student gets the right guidance, the right support and the confidence to achieve their potential."
                 </p>
@@ -63,7 +63,7 @@ export const AboutPage: React.FC = () => {
                 <div className="w-14 h-14 rounded-2xl bg-roar-yellow text-roar-navy flex items-center justify-center mb-6 shadow-md">
                   <Target className="w-7 h-7" />
                 </div>
-                <h2 className="text-2xl font-extrabold text-roar-navy mb-4">Our Mission</h2>
+                <h2 className="text-2xl font-extrabold text-amber-500 mb-4">Our Mission</h2>
                 <p className="text-slate-700 text-base leading-relaxed">
                   "Our goal is to understand the student, strengthen the concepts and help them move forward with confidence."
                 </p>
@@ -81,7 +81,7 @@ export const AboutPage: React.FC = () => {
               <div className="w-12 h-12 rounded-xl bg-roar-blue/10 text-roar-blue flex items-center justify-center mb-6">
                 <HeartHandshake className="w-6 h-6" />
               </div>
-              <h2 className="text-3xl font-extrabold text-roar-navy mb-6">
+              <h2 className="text-3xl font-extrabold text-amber-500 mb-6">
                 Why We Started RoarUps
               </h2>
               <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-6">
@@ -99,7 +99,7 @@ export const AboutPage: React.FC = () => {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl font-extrabold text-roar-navy mb-3">
+            <h2 className="text-3xl font-extrabold text-amber-500 mb-3">
               Two Tailored Learning Experiences
             </h2>
             <p className="text-slate-600 text-base">

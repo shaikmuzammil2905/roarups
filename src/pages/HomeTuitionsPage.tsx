@@ -15,7 +15,7 @@ export const HomeTuitionsPage: React.FC = () => {
                 <Home className="w-4 h-4" />
                 <span>1-on-1 Personalized Learning</span>
               </div>
-              <h1 className="text-4xl sm:text-5xl font-extrabold text-roar-navy tracking-tight leading-tight">
+              <h1 className="text-4xl sm:text-5xl font-extrabold text-amber-500 tracking-tight leading-tight">
                 Roar Home Tuitions
               </h1>
               <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
@@ -62,7 +62,7 @@ export const HomeTuitionsPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           {/* Key Benefits */}
           <div>
-            <h2 className="text-3xl font-extrabold text-roar-navy mb-8 text-center">
+            <h2 className="text-3xl font-extrabold text-amber-500 mb-8 text-center">
               Key Benefits of Roar Home Tuitions
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

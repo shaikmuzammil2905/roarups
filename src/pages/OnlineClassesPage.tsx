@@ -15,7 +15,7 @@ export const OnlineClassesPage: React.FC = () => {
                 <Laptop className="w-4 h-4 text-sky-600" />
                 <span>Interactive Live Learning</span>
               </div>
-              <h1 className="text-4xl sm:text-5xl font-extrabold text-roar-navy tracking-tight leading-tight">
+              <h1 className="text-4xl sm:text-5xl font-extrabold text-amber-500 tracking-tight leading-tight">
                 Online Live Classes
               </h1>
               <p className="text-slate-600 text-base sm:text-lg leading-relaxed">

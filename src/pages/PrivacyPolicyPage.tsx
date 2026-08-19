@@ -10,7 +10,7 @@ export const PrivacyPolicyPage: React.FC = () => {
           <div className="flex items-center gap-3 border-b pb-4">
             <ShieldCheck className="w-8 h-8 text-roar-blue" />
             <div>
-              <h1 className="text-3xl font-extrabold text-roar-navy">Privacy Policy</h1>
+              <h1 className="text-3xl font-extrabold text-amber-500">Privacy Policy</h1>
               <p className="text-xs text-slate-500">Effective Date: 2026 • ROARUPS Education</p>
             </div>
           </div>

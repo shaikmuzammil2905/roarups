@@ -26,7 +26,7 @@ export const ReviewCarousel: React.FC = () => {
             <span className="text-roar-blue font-extrabold text-xs tracking-wider uppercase mb-2 block">
               Parent & Student Feedback
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-roar-navy tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-amber-500 tracking-tight">
               What Parents & Students Say
             </h2>
           </div>

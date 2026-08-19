@@ -29,35 +29,37 @@ export const HeroSection: React.FC = () => {
 
             {/* Hero Main Headline */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-roar-navy tracking-tight leading-[1.15]">
-              <span className="text-roar-blue">Roar Home Tuitions</span> |{' '}
+              <span className="text-roar-blue">Roar Home Tuitions</span>{' '}
+              <span className="text-roar-yellow font-black mx-1">|</span>{' '}
               <br className="hidden sm:inline" />
-              Roar Tuition Center
+              <span className="text-roar-yellow">RoarUps</span>
             </h1>
 
             {/* Supporting Headline */}
             <p className="text-base sm:text-lg md:text-xl font-bold text-roar-blue tracking-normal">
-              Personalized Learning | Stronger Foundations | Brighter Futures
+              Personalized Learning <span className="text-roar-yellow">|</span> Stronger Foundations <span className="text-roar-yellow">|</span> Brighter Futures
             </p>
 
             {/* Description */}
             <p className="text-slate-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium">
-              Providing quality tuition from <strong className="text-roar-navy font-bold">LKG to Graduation</strong>, supporting all CBSE, ICSE, State, IB Curriculum, Cambridge.
+              Providing quality tuition from <strong className="text-roar-yellow font-bold bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200">LKG to Graduation</strong>, supporting all CBSE, ICSE, State, IB Curriculum, Cambridge.
             </p>
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
               <Link
                 to="/services"
-                className="w-full sm:w-auto px-8 py-3.5 bg-roar-blue hover:bg-roar-blue-hover text-white font-bold rounded-xl shadow-lg shadow-roar-blue/25 hover:shadow-roar-blue/40 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2"
+                className="w-full sm:w-auto px-8 py-3.5 bg-roar-blue hover:bg-roar-blue-hover text-white font-bold rounded-xl shadow-lg shadow-roar-blue/25 hover:shadow-roar-blue/40 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2 border-2 border-roar-blue"
               >
                 <span>Explore Our Services</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 text-roar-yellow" />
               </Link>
               <Link
                 to="/register"
-                className="w-full sm:w-auto px-8 py-4 bg-white text-roar-navy border-2 border-roar-blue font-extrabold rounded-full shadow-lg hover:bg-blue-50 transition-all duration-300 text-center text-sm sm:text-base"
+                className="w-full sm:w-auto px-8 py-3.5 bg-roar-yellow hover:bg-roar-yellow-hover text-roar-navy border-2 border-roar-yellow font-extrabold rounded-xl shadow-lg shadow-roar-yellow/30 hover:shadow-roar-yellow/50 transition-all transform hover:-translate-y-0.5 text-center text-sm sm:text-base flex items-center justify-center gap-2"
               >
-                Enquiry Now
+                <span>Enquiry Now</span>
+                <ArrowRight className="w-4 h-4 text-roar-navy" />
               </Link>
             </div>
 

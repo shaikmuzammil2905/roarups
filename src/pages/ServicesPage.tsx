@@ -12,7 +12,7 @@ export const ServicesPage: React.FC = () => {
           <span className="inline-block px-4 py-1 rounded-full bg-roar-blue/10 text-roar-blue font-bold text-xs uppercase tracking-wider mb-3">
             Academic Offerings
           </span>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-roar-navy tracking-tight mb-4">
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-amber-500 tracking-tight mb-4">
             Educational Services at ROARUPS
           </h1>
           <p className="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto">

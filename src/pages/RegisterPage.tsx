@@ -32,7 +32,6 @@ export const RegisterPage: React.FC = () => {
   const [tutorForm, setTutorForm] = useState({
     fullName: '',
     mobileNumber: '',
-    password: '',
     qualification: '',
     gender: 'Male',
     subjects: [] as string[],
@@ -48,7 +47,6 @@ export const RegisterPage: React.FC = () => {
   const [studentForm, setStudentForm] = useState({
     studentName: '',
     mobileNumber: '',
-    password: '',
     classGrade: 'Class 9-10',
     curriculum: 'CBSE',
     subjectsRequired: [] as string[],
@@ -65,7 +63,6 @@ export const RegisterPage: React.FC = () => {
     classGrade: 'Class 9-10',
     curriculum: 'CBSE',
     mobileNumber: '',
-    password: '',
     location: '',
     subjectsRequired: [] as string[],
     learningMode: 'Both',
@@ -82,11 +79,11 @@ export const RegisterPage: React.FC = () => {
   // Submit Tutor Handler
   const handleTutorSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!tutorForm.fullName || !tutorForm.mobileNumber || !tutorForm.password) {
+    if (!tutorForm.fullName || !tutorForm.mobileNumber) {
       setModalState({
         isOpen: true,
         title: 'Validation Error',
-        message: 'Please fill in all required fields (Name, Mobile, Password).',
+        message: 'Please fill in all required fields (Name and Mobile Number).',
         type: 'error'
       });
       return;
@@ -102,7 +99,7 @@ export const RegisterPage: React.FC = () => {
       if (isSupabaseConfigured && supabase) {
         const { data: authData, error: authError } = await supabase.auth.signUp({
           email: `${tutorForm.mobileNumber}@roarups.temp`, // temporary email mapping for phone registration
-          password: tutorForm.password,
+          password: `Roarups@${tutorForm.mobileNumber}`,
           options: {
             data: {
               full_name: tutorForm.fullName,
@@ -164,11 +161,11 @@ export const RegisterPage: React.FC = () => {
   // Submit Student Handler
   const handleStudentSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!studentForm.studentName || !studentForm.mobileNumber || !studentForm.password) {
+    if (!studentForm.studentName || !studentForm.mobileNumber) {
       setModalState({
         isOpen: true,
         title: 'Validation Error',
-        message: 'Please fill in Student Name, Mobile Number, and Password.',
+        message: 'Please fill in Student Name and Mobile Number.',
         type: 'error'
       });
       return;
@@ -181,7 +178,7 @@ export const RegisterPage: React.FC = () => {
       if (isSupabaseConfigured && supabase) {
         const { data: authData } = await supabase.auth.signUp({
           email: `${studentForm.mobileNumber}@roarups.temp`,
-          password: studentForm.password,
+          password: `Roarups@${studentForm.mobileNumber}`,
           options: {
             data: {
               full_name: studentForm.studentName,
@@ -230,11 +227,11 @@ export const RegisterPage: React.FC = () => {
   // Submit Parent Handler
   const handleParentSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!parentForm.parentName || !parentForm.mobileNumber || !parentForm.password) {
+    if (!parentForm.parentName || !parentForm.mobileNumber) {
       setModalState({
         isOpen: true,
         title: 'Validation Error',
-        message: 'Please fill in Parent Name, Mobile Number, and Password.',
+        message: 'Please fill in Parent Name and Mobile Number.',
         type: 'error'
       });
       return;
@@ -247,7 +244,7 @@ export const RegisterPage: React.FC = () => {
       if (isSupabaseConfigured && supabase) {
         const { data: authData } = await supabase.auth.signUp({
           email: `${parentForm.mobileNumber}@roarups.temp`,
-          password: parentForm.password,
+          password: `Roarups@${parentForm.mobileNumber}`,
           options: {
             data: {
               full_name: parentForm.parentName,
@@ -418,18 +415,6 @@ export const RegisterPage: React.FC = () => {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Password *</label>
-                      <input
-                        type="password"
-                        required
-                        value={tutorForm.password}
-                        onChange={(e) => setTutorForm({ ...tutorForm, password: e.target.value })}
-                        placeholder="Create account password"
-                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-roar-blue focus:border-transparent text-sm"
-                      />
-                    </div>
-
-                    <div>
                       <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Qualification *</label>
                       <input
                         type="text"
@@ -590,18 +575,6 @@ export const RegisterPage: React.FC = () => {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Password *</label>
-                      <input
-                        type="password"
-                        required
-                        value={studentForm.password}
-                        onChange={(e) => setStudentForm({ ...studentForm, password: e.target.value })}
-                        placeholder="Create account password"
-                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-roar-yellow text-sm"
-                      />
-                    </div>
-
-                    <div>
                       <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Class / Grade *</label>
                       <select
                         value={studentForm.classGrade}
@@ -730,18 +703,6 @@ export const RegisterPage: React.FC = () => {
                         value={parentForm.mobileNumber}
                         onChange={(e) => setParentForm({ ...parentForm, mobileNumber: e.target.value })}
                         placeholder="10-digit mobile number"
-                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-emerald-500 text-sm"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Password *</label>
-                      <input
-                        type="password"
-                        required
-                        value={parentForm.password}
-                        onChange={(e) => setParentForm({ ...parentForm, password: e.target.value })}
-                        placeholder="Create account password"
                         className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-emerald-500 text-sm"
                       />
                     </div>

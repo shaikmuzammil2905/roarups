@@ -67,7 +67,7 @@ export const ContactPage: React.FC = () => {
           <span className="inline-block px-4 py-1 rounded-full bg-roar-blue/10 text-roar-blue font-bold text-xs uppercase tracking-wider mb-3">
             Get In Touch
           </span>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-roar-navy tracking-tight mb-3">
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-amber-500 tracking-tight mb-3">
             Contact RoarUps
           </h1>
           <p className="text-slate-600 text-base sm:text-lg">
@@ -83,7 +83,7 @@ export const ContactPage: React.FC = () => {
             {/* Left Col: Details & Quick Action Cards */}
             <div className="lg:col-span-5 space-y-6">
               <div className="flex items-center justify-between border-b pb-3">
-                <h2 className="text-2xl font-extrabold text-roar-navy">Contact Details</h2>
+                <h2 className="text-2xl font-extrabold text-amber-500">Contact Details</h2>
                 <a
                   href="https://wa.me/916309763394"
                   target="_blank"
@@ -170,7 +170,7 @@ export const ContactPage: React.FC = () => {
 
             {/* Right Col: Send Message Form */}
             <div className="lg:col-span-7 bg-slate-50 p-8 rounded-3xl border border-slate-100 shadow-sm">
-              <h2 className="text-2xl font-extrabold text-roar-navy mb-2">Send Us a Message</h2>
+              <h2 className="text-2xl font-extrabold text-amber-500 mb-2">Send Us a Message</h2>
               <p className="text-xs text-slate-500 mb-6">
                 Fill out the form below and our educational counseling team will respond promptly.
               </p>
@@ -250,7 +250,7 @@ export const ContactPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
-              <h2 className="text-2xl font-extrabold text-roar-navy">Visit Our Tuition Center Location</h2>
+              <h2 className="text-2xl font-extrabold text-amber-500">Visit Our Tuition Center Location</h2>
               <p className="text-xs text-slate-500">Road No. 5, IDPL Colony, Vasanth Nagar, Near JNTU, Hyderabad</p>
             </div>
             <a

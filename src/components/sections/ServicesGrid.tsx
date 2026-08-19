@@ -12,7 +12,7 @@ export const ServicesGrid: React.FC = () => {
       description:
         "Personalized one-to-one tutoring at your home, designed around the student's learning needs and academic goals.",
       path: '/services/home-tuitions',
-      accentColor: 'text-roar-blue bg-blue-50 border-blue-200',
+      accentColor: 'text-amber-500 bg-amber-50 border-amber-200',
     },
     {
       id: 'tuition-center',
@@ -21,7 +21,7 @@ export const ServicesGrid: React.FC = () => {
       description:
         'Structured classroom learning with focused batches, dedicated tutors and consistent academic support.',
       path: '/services/tuition-center',
-      accentColor: 'text-roar-yellow-hover bg-amber-50 border-amber-200',
+      accentColor: 'text-amber-500 bg-amber-50 border-amber-200',
     },
     {
       id: 'online-classes',
@@ -30,7 +30,7 @@ export const ServicesGrid: React.FC = () => {
       description:
         'Flexible online learning with experienced tutors, allowing students to learn from the comfort of home.',
       path: '/services/online-classes',
-      accentColor: 'text-sky-600 bg-sky-50 border-sky-200',
+      accentColor: 'text-amber-500 bg-amber-50 border-amber-200',
     },
   ];
 
@@ -39,11 +39,11 @@ export const ServicesGrid: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-roar-navy tracking-tight mb-3 relative inline-block">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-amber-500 tracking-tight mb-3 relative inline-block">
             Our Services
-            <span className="block h-1.5 w-20 bg-roar-yellow mx-auto mt-2 rounded-full" />
+            <span className="block h-1.5 w-24 bg-roar-yellow mx-auto mt-2 rounded-full" />
           </h2>
-          <p className="text-slate-600 text-base sm:text-lg">
+          <p className="text-slate-600 text-base sm:text-lg font-medium">
             Choose the ideal learning format tailored to your child’s academic journey and schedule.
           </p>
         </div>
@@ -64,13 +64,13 @@ export const ServicesGrid: React.FC = () => {
                 <div>
                   {/* Icon */}
                   <div
-                    className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 border ${service.accentColor} transition-transform group-hover:scale-110`}
+                    className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 border ${service.accentColor} transition-transform group-hover:scale-110 group-hover:bg-roar-yellow group-hover:text-roar-navy`}
                   >
                     <Icon className="w-8 h-8" />
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-2xl font-bold text-roar-navy mb-3 group-hover:text-roar-blue transition-colors">
+                  <h3 className="text-2xl font-extrabold text-slate-800 mb-3 group-hover:text-amber-500 transition-colors">
                     {service.title}
                   </h3>
 

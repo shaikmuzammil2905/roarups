@@ -15,7 +15,7 @@ export const TuitionCenterPage: React.FC = () => {
                 <Users className="w-4 h-4 text-roar-yellow" />
                 <span>Structured Batch Learning</span>
               </div>
-              <h1 className="text-4xl sm:text-5xl font-extrabold text-roar-navy tracking-tight leading-tight">
+              <h1 className="text-4xl sm:text-5xl font-extrabold text-amber-500 tracking-tight leading-tight">
                 Roar Tuition Center
               </h1>
               <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
@@ -54,7 +54,7 @@ export const TuitionCenterPage: React.FC = () => {
       {/* Features */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <h2 className="text-3xl font-extrabold text-roar-navy text-center">
+          <h2 className="text-3xl font-extrabold text-amber-500 text-center">
             Center Classroom Features
           </h2>
 

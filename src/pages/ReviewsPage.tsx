@@ -75,7 +75,7 @@ export const ReviewsPage: React.FC = () => {
           <span className="inline-block px-4 py-1 rounded-full bg-roar-blue/10 text-roar-blue font-bold text-xs uppercase tracking-wider mb-3">
             Community Testimonials
           </span>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-roar-navy tracking-tight mb-3">
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-amber-500 tracking-tight mb-3">
             Parent & Student Reviews
           </h1>
           <p className="text-slate-600 text-base sm:text-lg">
@@ -90,7 +90,7 @@ export const ReviewsPage: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             {/* Left Col: Approved Testimonials List */}
             <div className="lg:col-span-7 space-y-6">
-              <h2 className="text-2xl font-extrabold text-roar-navy border-b pb-3">
+              <h2 className="text-2xl font-extrabold text-amber-500 border-b pb-3">
                 Verified Reviews ({reviews.length})
               </h2>
 
@@ -141,7 +141,7 @@ export const ReviewsPage: React.FC = () => {
             <div className="lg:col-span-5 bg-slate-50 p-8 rounded-3xl border border-slate-100 shadow-card">
               <div className="flex items-center gap-3 mb-4">
                 <MessageSquarePlus className="w-6 h-6 text-roar-blue" />
-                <h2 className="text-2xl font-extrabold text-roar-navy">
+                <h2 className="text-2xl font-extrabold text-amber-500">
                   Share Your RoarUps Experience
                 </h2>
               </div>
