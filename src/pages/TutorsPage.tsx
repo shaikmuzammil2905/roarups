@@ -45,11 +45,18 @@ export interface TutorProfile {
   feeInfo: string;
 }
 
+// WhatsApp SVG Icon Component
+const WhatsAppIcon: React.FC<{ className?: string }> = ({ className = 'w-4 h-4' }) => (
+  <svg className={`fill-current ${className}`} viewBox="0 0 24 24">
+    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.157 4.228 4.261-1.118zm13.111-5.719c-.317-.159-1.875-.926-2.166-1.032-.29-.106-.502-.159-.714.159-.211.318-.82 1.032-1.005 1.244-.185.212-.37.238-.687.079-.317-.159-1.341-.494-2.556-1.577-.945-.843-1.583-1.884-1.768-2.202-.185-.318-.02-.49.139-.648.143-.143.317-.37.476-.555.159-.185.212-.318.317-.529.106-.212.053-.397-.026-.555-.079-.159-.714-1.72-.979-2.356-.257-.619-.519-.536-.714-.546-.185-.01-.397-.01-.608-.01-.212 0-.555.079-.847.397-.291.318-1.111 1.085-1.111 2.646 0 1.561 1.137 3.069 1.296 3.281.159.212 2.24 3.42 5.427 4.796 2.054.887 2.859.98 3.896.827.632-.093 1.875-.767 2.139-1.508.264-.741.264-1.376.185-1.508-.079-.133-.291-.212-.608-.371z"/>
+  </svg>
+);
+
 const TUTORS_DATA: TutorProfile[] = [
   {
     id: 'tutor-1',
     name: 'Dr. K. Srinivas Rao',
-    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80',
+    avatar: 'https://ui-avatars.com/api/?name=K+Srinivas+Rao&background=1e3a5f&color=ffffff&size=200&bold=true&font-size=0.38',
     badge: 'Senior Faculty',
     rating: 4.95,
     reviewsCount: 46,
@@ -74,7 +81,7 @@ const TUTORS_DATA: TutorProfile[] = [
   {
     id: 'tutor-2',
     name: 'Mrs. Ananya Sharma',
-    avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&auto=format&fit=crop&q=80',
+    avatar: 'https://ui-avatars.com/api/?name=Ananya+Sharma&background=d97706&color=ffffff&size=200&bold=true&font-size=0.38',
     badge: 'Top Rated Tutor',
     rating: 4.98,
     reviewsCount: 52,
@@ -99,7 +106,7 @@ const TUTORS_DATA: TutorProfile[] = [
   {
     id: 'tutor-3',
     name: 'Mr. Ramesh Reddy',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80',
+    avatar: 'https://ui-avatars.com/api/?name=Ramesh+Reddy&background=059669&color=ffffff&size=200&bold=true&font-size=0.38',
     badge: 'Chemistry Specialist',
     rating: 4.91,
     reviewsCount: 38,
@@ -124,7 +131,7 @@ const TUTORS_DATA: TutorProfile[] = [
   {
     id: 'tutor-4',
     name: 'Dr. Priya Varma',
-    avatar: 'https://images.unsplash.com/photo-1580894732478-f726759c5d1e?w=400&auto=format&fit=crop&q=80',
+    avatar: 'https://ui-avatars.com/api/?name=Priya+Varma&background=7c3aed&color=ffffff&size=200&bold=true&font-size=0.38',
     badge: 'Biology & NEET Mentor',
     rating: 4.96,
     reviewsCount: 41,
@@ -149,7 +156,7 @@ const TUTORS_DATA: TutorProfile[] = [
   {
     id: 'tutor-5',
     name: 'Mr. Venkat Ramana',
-    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&auto=format&fit=crop&q=80',
+    avatar: 'https://ui-avatars.com/api/?name=Venkat+Ramana&background=0369a1&color=ffffff&size=200&bold=true&font-size=0.38',
     badge: 'Coding & Tech Mentor',
     rating: 4.92,
     reviewsCount: 33,
@@ -174,7 +181,7 @@ const TUTORS_DATA: TutorProfile[] = [
   {
     id: 'tutor-6',
     name: 'Ms. Shalini Iyer',
-    avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&auto=format&fit=crop&q=80',
+    avatar: 'https://ui-avatars.com/api/?name=Shalini+Iyer&background=be185d&color=ffffff&size=200&bold=true&font-size=0.38',
     badge: 'English & Humanities Master',
     rating: 4.89,
     reviewsCount: 29,
@@ -199,7 +206,7 @@ const TUTORS_DATA: TutorProfile[] = [
   {
     id: 'tutor-7',
     name: 'Mr. P. Rajeshwar Rao',
-    avatar: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=400&auto=format&fit=crop&q=80',
+    avatar: 'https://ui-avatars.com/api/?name=Rajeshwar+Rao&background=c2410c&color=ffffff&size=200&bold=true&font-size=0.38',
     badge: 'Commerce & CA Foundation',
     rating: 4.94,
     reviewsCount: 37,
@@ -224,7 +231,7 @@ const TUTORS_DATA: TutorProfile[] = [
   {
     id: 'tutor-8',
     name: 'Mrs. Geetha Krishna',
-    avatar: 'https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?w=400&auto=format&fit=crop&q=80',
+    avatar: 'https://ui-avatars.com/api/?name=Geetha+Krishna&background=0f766e&color=ffffff&size=200&bold=true&font-size=0.38',
     badge: 'Primary Foundation Expert',
     rating: 4.97,
     reviewsCount: 48,
@@ -396,11 +403,11 @@ export const TutorsPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-100/90 text-roar-blue text-xs sm:text-sm font-bold tracking-wide mb-4 shadow-sm">
             <Sparkles className="w-4 h-4 text-roar-yellow fill-roar-yellow" />
-            <span>Hyderabad’s Verified Faculty & 1-on-1 Tutors</span>
+            <span>India's Verified Faculty & 1-on-1 Tutors</span>
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-roar-navy tracking-tight leading-tight max-w-4xl mx-auto">
-            Find & Connect with <span className="text-roar-blue">Expert Tutors</span> in <span className="text-roar-yellow">Hyderabad</span>
+            Find & Connect with <span className="text-roar-blue">Expert Tutors</span> <span className="text-roar-yellow">All Over India</span>
           </h1>
 
           <p className="mt-4 text-slate-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
@@ -809,9 +816,9 @@ export const TutorsPage: React.FC = () => {
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full py-3.5 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-2xl shadow-lg shadow-emerald-600/25 transition-all flex items-center justify-center gap-2 text-sm"
+                    className="w-full py-3.5 px-4 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold rounded-2xl shadow-lg shadow-emerald-600/25 transition-all flex items-center justify-center gap-2 text-sm"
                   >
-                    <MessageSquare className="w-4 h-4" />
+                    <WhatsAppIcon className="w-4 h-4" />
                     <span>WhatsApp Inquiry</span>
                   </a>
                 </div>
@@ -1011,9 +1018,9 @@ export const TutorsPage: React.FC = () => {
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:flex-1 py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-2xl shadow-lg transition-all flex items-center justify-center gap-2 text-xs sm:text-sm"
+                  className="w-full sm:flex-1 py-3.5 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold rounded-2xl shadow-lg transition-all flex items-center justify-center gap-2 text-xs sm:text-sm"
                 >
-                  <MessageSquare className="w-4 h-4" />
+                  <WhatsAppIcon className="w-4 h-4" />
                   <span>Book Free Demo</span>
                 </a>
               </div>
@@ -1022,57 +1029,46 @@ export const TutorsPage: React.FC = () => {
         )}
       </AnimatePresence>
 
-      {/* 7. POPUP 3: Scroll-Triggered Floating Counselor Assistance Popup */}
+      {/* 7. Scroll-Triggered Floating Action Buttons: Call + WhatsApp */}
       <AnimatePresence>
         {showScrollPopup && !isScrollPopupDismissed && (
           <motion.div
-            initial={{ opacity: 0, y: 50, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 50, scale: 0.95 }}
-            transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-            className="fixed bottom-20 lg:bottom-6 right-4 sm:right-6 z-40 max-w-sm w-[calc(100%-2rem)] bg-white rounded-3xl shadow-2xl border-2 border-roar-blue/30 p-4 sm:p-5 overflow-hidden"
+            initial={{ opacity: 0, x: 60 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 60 }}
+            transition={{ type: 'spring', damping: 22, stiffness: 280 }}
+            className="fixed bottom-24 lg:bottom-10 right-4 sm:right-6 z-40 flex flex-col items-end gap-3"
           >
-            <div className="absolute top-0 right-0 w-32 h-32 bg-roar-yellow/15 rounded-full blur-xl pointer-events-none" />
+            {/* Dismiss button */}
+            <button
+              onClick={() => setIsScrollPopupDismissed(true)}
+              className="w-7 h-7 rounded-full bg-slate-800/70 text-white flex items-center justify-center shadow-lg hover:bg-slate-900 transition-colors self-end"
+              aria-label="Dismiss"
+            >
+              <X className="w-3.5 h-3.5" />
+            </button>
 
-            <div className="flex items-start justify-between gap-2 mb-2 relative z-10">
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-full bg-emerald-500 animate-ping" />
-                <span className="text-[11px] font-black uppercase tracking-wider text-roar-blue">
-                  Instant Tutor Matching Active
-                </span>
-              </div>
-              <button
-                onClick={() => setIsScrollPopupDismissed(true)}
-                className="p-1 rounded-full text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors"
-                aria-label="Dismiss prompt"
-              >
-                <X className="w-4 h-4" />
-              </button>
-            </div>
+            {/* WhatsApp Button */}
+            <a
+              href="https://wa.me/916309763394?text=Hi%20RoarUps,%20please%20help%20me%20find%20the%20best%20tutor%20for%20my%20child."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-2.5 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold px-4 py-3 rounded-full shadow-xl shadow-green-500/30 transition-all hover:-translate-y-0.5 text-sm"
+              aria-label="WhatsApp us"
+            >
+              <WhatsAppIcon className="w-5 h-5 shrink-0" />
+              <span className="hidden sm:inline-block whitespace-nowrap">WhatsApp Us</span>
+            </a>
 
-            <p className="text-xs text-slate-700 mb-3 leading-relaxed relative z-10 font-medium">
-              ⚡ Need assistance selecting the right verified tutor in Hyderabad? Talk directly with our academic advisor now.
-            </p>
-
-            <div className="grid grid-cols-2 gap-2 relative z-10">
-              <a
-                href="tel:6309763394"
-                className="py-2.5 px-3 bg-roar-blue hover:bg-roar-blue-hover text-white text-xs font-bold rounded-xl shadow-md flex items-center justify-center gap-1.5 transition-all"
-              >
-                <Phone className="w-3.5 h-3.5 text-roar-yellow" />
-                <span>Call Now</span>
-              </a>
-
-              <a
-                href="https://wa.me/916309763394?text=Hi%20RoarUps,%20please%20help%20me%20find%20the%20best%20tutor%20for%20my%20child."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="py-2.5 px-3 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl shadow-md flex items-center justify-center gap-1.5 transition-all"
-              >
-                <MessageSquare className="w-3.5 h-3.5" />
-                <span>WhatsApp</span>
-              </a>
-            </div>
+            {/* Call Button */}
+            <a
+              href="tel:6309763394"
+              className="group flex items-center gap-2.5 bg-roar-blue hover:bg-roar-blue-hover text-white font-bold px-4 py-3 rounded-full shadow-xl shadow-roar-blue/30 transition-all hover:-translate-y-0.5 text-sm"
+              aria-label="Call us"
+            >
+              <Phone className="w-5 h-5 shrink-0 text-roar-yellow" />
+              <span className="hidden sm:inline-block whitespace-nowrap">Call: 6309763394</span>
+            </a>
           </motion.div>
         )}
       </AnimatePresence>
