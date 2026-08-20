@@ -43,11 +43,11 @@ export const Footer: React.FC = () => {
 
                 {/* Instagram */}
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/roar_tuitions?igsh=MXgzZ2dudTJ1aGI3eQ=="
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center text-pink-400 hover:bg-gradient-to-tr hover:from-amber-500 hover:via-pink-500 hover:to-purple-600 hover:text-white transition-all transform hover:-translate-y-0.5"
-                  title="Instagram"
+                  title="Instagram (@roar_tuitions)"
                   aria-label="Instagram"
                 >
                   <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">

@@ -14,7 +14,7 @@ const MISSING_ENV_ERROR = "Supabase configuration missing. Please set VITE_SUPAB
 const DEFAULT_SETTINGS: WebsiteSettings = {
   social_links: {
     whatsapp: 'https://wa.me/916309763394',
-    instagram: '',
+    instagram: 'https://www.instagram.com/roar_tuitions?igsh=MXgzZ2dudTJ1aGI3eQ==',
     linkedin: '',
   },
   google_maps: {
