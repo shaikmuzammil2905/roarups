@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { TopBar } from './TopBar';
 import { Navbar } from './Navbar';
 import { Footer } from './Footer';
 import { BottomNav } from './BottomNav';
@@ -22,7 +21,6 @@ export const PageLayout: React.FC<PageLayoutProps> = ({ children }) => {
   return (
     <div className="min-h-screen flex flex-col bg-roar-gray-50 text-roar-navy overflow-x-hidden relative">
       <SupabaseBanner />
-      <TopBar />
       <Navbar />
       
       <motion.main

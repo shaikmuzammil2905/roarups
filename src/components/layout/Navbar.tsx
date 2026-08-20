@@ -44,12 +44,12 @@ export const Navbar: React.FC = () => {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          {/* Large Prominent Logo for Mobile & Desktop */}
-          <Link to="/" className="flex items-center gap-3 group py-1">
+          {/* Prominent Horizontal Brand Logo */}
+          <Link to="/" className="flex items-center gap-2 sm:gap-3 group py-0.5">
             <img
-              src="/assets/roarups-logo.png"
-              alt="ROARUPS Logo"
-              className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-transform group-hover:scale-105"
+              src="/assets/roarups-horizontal-logo.png"
+              alt="ROARUPS - Your Success Is Our Mission"
+              className="h-10 xs:h-11 sm:h-12 md:h-14 w-auto max-w-[210px] xs:max-w-[250px] sm:max-w-none object-contain transition-transform group-hover:scale-105"
             />
           </Link>
 

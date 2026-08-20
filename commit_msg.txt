@@ -1,1 +1,0 @@
-Remove Aadhaar verification upload and references from website

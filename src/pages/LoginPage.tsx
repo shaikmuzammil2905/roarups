@@ -60,9 +60,9 @@ export const LoginPage: React.FC = () => {
             {/* Logo Header */}
             <div className="text-center space-y-2">
               <img
-                src="/assets/roarups-logo.png"
+                src="/assets/roarups-horizontal-logo.png"
                 alt="ROARUPS"
-                className="h-12 mx-auto object-contain mb-2"
+                className="h-10 mx-auto object-contain mb-2"
               />
               <h1 className="text-2xl font-extrabold text-roar-navy">Welcome Back</h1>
               <p className="text-xs text-slate-500">Log in to access your ROARUPS education dashboard</p>

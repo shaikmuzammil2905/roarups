@@ -44,12 +44,12 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
             className="fixed top-0 right-0 bottom-0 w-4/5 max-w-sm bg-white shadow-2xl flex flex-col justify-between z-10"
           >
-            {/* Header with Prominent Logo */}
+            {/* Header with Horizontal Brand Logo */}
             <div className="p-4 border-b border-slate-100 flex items-center justify-between">
               <img
-                src="/assets/roarups-logo.png"
+                src="/assets/roarups-horizontal-logo.png"
                 alt="ROARUPS"
-                className="h-16 w-auto object-contain"
+                className="h-10 w-auto max-w-[180px] object-contain"
               />
               <button
                 onClick={onClose}

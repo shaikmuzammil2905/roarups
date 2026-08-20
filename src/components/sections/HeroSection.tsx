@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useReducedMotion } from 'framer-motion';
-import { GraduationCap, Award, BookOpen, CheckCircle2, ArrowRight } from 'lucide-react';
+import { GraduationCap, BookOpen, CheckCircle2, ArrowRight } from 'lucide-react';
 
 export const HeroSection: React.FC = () => {
   const shouldReduceMotion = useReducedMotion();
@@ -21,23 +21,10 @@ export const HeroSection: React.FC = () => {
             transition={{ duration: 0.6, ease: 'easeOut' }}
             className="lg:col-span-7 space-y-6 text-center lg:text-left"
           >
-            {/* Trust Tag */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-100/80 text-roar-blue text-xs sm:text-sm font-bold tracking-wide shadow-sm">
-              <Award className="w-4 h-4 text-roar-yellow" />
-              <span>Hyderabad’s Trusted Education Partner</span>
-            </div>
-
             {/* Hero Main Headline */}
-            <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-extrabold text-roar-navy tracking-tight leading-tight">
-              <span className="text-roar-blue whitespace-nowrap">Roar Home Tuitions</span>{' '}
-              <span className="text-roar-yellow font-black mx-0.5 sm:mx-1">|</span>{' '}
-              <span className="text-roar-yellow whitespace-nowrap">RoarUps</span>
+            <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl font-black tracking-tight leading-none">
+              <span className="text-roar-blue">ROAR</span><span className="text-roar-yellow">UPS</span>
             </h1>
-
-            {/* Supporting Headline */}
-            <p className="text-base sm:text-lg md:text-xl font-bold text-roar-blue tracking-normal">
-              Personalized Learning <span className="text-roar-yellow">|</span> Stronger Foundations <span className="text-roar-yellow">|</span> Brighter Futures
-            </p>
 
             {/* Description */}
             <p className="text-slate-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium">
