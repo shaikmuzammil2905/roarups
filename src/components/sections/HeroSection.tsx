@@ -117,10 +117,6 @@ export const HeroSection: React.FC = () => {
                   <span className="w-2.5 h-2.5 rounded-full bg-roar-navy animate-ping"></span>
                   <span>5+ Yrs Excellence</span>
                 </div>
-
-                <div className="absolute bottom-6 left-6 bg-roar-navy/90 backdrop-blur-md text-white px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold shadow-xl border border-white/20">
-                  <span>📍 Hyderabad (JNTU Area)</span>
-                </div>
               </motion.div>
             </motion.div>
           </motion.div>

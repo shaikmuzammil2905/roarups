@@ -30,6 +30,7 @@ export const Navbar: React.FC = () => {
         { name: 'Online Classes', path: '/services/online-classes' },
       ],
     },
+    { name: 'Tutors', path: '/tutors' },
     { name: 'Enquiry', path: '/register' },
     { name: 'Contact Us', path: '/contact' },
   ];

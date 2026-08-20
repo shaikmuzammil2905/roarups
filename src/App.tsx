@@ -9,6 +9,7 @@ import { OnlineClassesPage } from './pages/OnlineClassesPage';
 import { RegisterPage } from './pages/RegisterPage';
 import { ContactPage } from './pages/ContactPage';
 import { ReviewsPage } from './pages/ReviewsPage';
+import { TutorsPage } from './pages/TutorsPage';
 import { DashboardPage } from './pages/DashboardPage';
 import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
 import { TermsPage } from './pages/TermsPage';
@@ -42,6 +43,7 @@ export function App() {
         <Route path="/services/home-tuitions" element={<HomeTuitionsPage />} />
         <Route path="/services/tuition-center" element={<TuitionCenterPage />} />
         <Route path="/services/online-classes" element={<OnlineClassesPage />} />
+        <Route path="/tutors" element={<TutorsPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<Navigate to="/register" replace />} />
         <Route path="/contact" element={<ContactPage />} />

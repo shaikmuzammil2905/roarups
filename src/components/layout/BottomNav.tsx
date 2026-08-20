@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Home, UserCheck, BookOpen, UserPlus, PhoneCall } from 'lucide-react';
+import { Home, BookOpen, GraduationCap, UserPlus, PhoneCall } from 'lucide-react';
 
 export const BottomNav: React.FC = () => {
   const location = useLocation();
 
   const navItems = [
     { name: 'Home', path: '/', icon: Home },
-    { name: 'About Us', path: '/about', icon: UserCheck },
     { name: 'Services', path: '/services', icon: BookOpen },
+    { name: 'Tutors', path: '/tutors', icon: GraduationCap },
     { name: 'Enquiry', path: '/register', icon: UserPlus },
     { name: 'Contact', path: '/contact', icon: PhoneCall },
   ];
