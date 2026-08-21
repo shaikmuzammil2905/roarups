@@ -162,7 +162,7 @@ export const ServicesTypingStats: React.FC = () => {
           badgeText="Proven Results"
           gradientClass="bg-gradient-to-br from-amber-600 via-roar-navy to-slate-900"
           typingPhrases={[
-            '500+ Successful Tuitions Delivered across Hyderabad',
+            '500+ Successful Tuitions Delivered',
             '100% Individual Focus & Custom Study Plans',
             'High Marks in Board & Intermediate Exams'
           ]}
