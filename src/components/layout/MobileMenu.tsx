@@ -18,7 +18,6 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
     { name: 'Home Tuitions', path: '/services/home-tuitions', isSub: true },
     { name: 'Tuition Center', path: '/services/tuition-center', isSub: true },
     { name: 'Online Classes', path: '/services/online-classes', isSub: true },
-    { name: 'Tutors', path: '/tutors' },
     { name: 'Enquiry', path: '/register' },
     { name: 'Reviews', path: '/reviews' },
     { name: 'Contact Us', path: '/contact' },

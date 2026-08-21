@@ -128,9 +128,6 @@ export const Footer: React.FC = () => {
                 <Link to="/services" className="text-slate-300 hover:text-roar-yellow transition-colors">Our Services</Link>
               </li>
               <li>
-                <Link to="/tutors" className="text-slate-300 hover:text-roar-yellow transition-colors">Find Tutors</Link>
-              </li>
-              <li>
                 <Link to="/register" className="text-slate-300 hover:text-roar-yellow transition-colors">Enquiry Now</Link>
               </li>
               <li>
@@ -146,12 +143,6 @@ export const Footer: React.FC = () => {
           <div className="space-y-4">
             <h4 className="text-lg font-bold text-white border-b border-slate-800 pb-2">Our Services</h4>
             <ul className="space-y-2.5 text-sm">
-              <li>
-                <Link to="/tutors" className="text-slate-300 hover:text-roar-yellow transition-colors flex items-center justify-between">
-                  <span>Verified Tutors Directory</span>
-                  <ArrowUpRight className="w-3.5 h-3.5 opacity-60" />
-                </Link>
-              </li>
               <li>
                 <Link to="/services/home-tuitions" className="text-slate-300 hover:text-roar-yellow transition-colors flex items-center justify-between">
                   <span>Roar Home Tuitions</span>
