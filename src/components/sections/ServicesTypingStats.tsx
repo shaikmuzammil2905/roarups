@@ -132,7 +132,7 @@ export const ServicesTypingStats: React.FC = () => {
           Proven Excellence
         </span>
         <h3 className="text-xl sm:text-2xl font-extrabold text-roar-navy tracking-tight">
-          Empowering Education Across Hyderabad
+          Empowering Education
         </h3>
       </div>
 
