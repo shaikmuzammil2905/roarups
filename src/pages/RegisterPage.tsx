@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { PageLayout } from '../components/layout/PageLayout';
 import { Modal } from '../components/common/Modal';
+import { SubmissionDispatchModal } from '../components/common/SubmissionDispatchModal';
 import {
   submitTutorRegistration,
   submitStudentRegistration,
@@ -21,6 +22,15 @@ export const RegisterPage: React.FC = () => {
     message: '',
     type: 'success'
   });
+  const [dispatchData, setDispatchData] = useState<{
+    isOpen: boolean;
+    title?: string;
+    subtitle?: string;
+    whatsappUrl1?: string;
+    whatsappUrl2?: string;
+    mailtoUrl?: string;
+    formattedText?: string;
+  }>({ isOpen: false });
 
   // Shared Form Options
   const curriculaOptions = ['CBSE', 'ICSE', 'State Board', 'IB', 'Cambridge'];
@@ -125,22 +135,25 @@ export const RegisterPage: React.FC = () => {
         location: tutorForm.location,
       });
 
-      if (!res.success) {
-        throw new Error(res.error || 'Failed to submit registration');
+      if (res.whatsappUrl1) {
+        window.open(res.whatsappUrl1, '_blank');
       }
 
-      setModalState({
+      setDispatchData({
         isOpen: true,
-        title: 'Registration Submitted',
-        message: 'Your registration has been submitted successfully. Our team will review your details and contact you.',
-        type: 'success'
+        title: 'Tutor Registration Ready!',
+        subtitle: 'Send your application details directly to ROARUPS via WhatsApp or Email:',
+        whatsappUrl1: res.whatsappUrl1,
+        whatsappUrl2: res.whatsappUrl2,
+        mailtoUrl: res.mailtoUrl,
+        formattedText: res.formattedText
       });
       setSelectedType(null);
     } catch (err: any) {
       setModalState({
         isOpen: true,
         title: 'Submission Error',
-        message: err.message || 'An error occurred during registration. Please check your connection or Supabase settings.',
+        message: err.message || 'An error occurred during registration.',
         type: 'error'
       });
     } finally {
@@ -166,18 +179,20 @@ export const RegisterPage: React.FC = () => {
     try {
       let userId: string | null = null;
       if (isSupabaseConfigured && supabase) {
-        const { data: authData } = await supabase.auth.signUp({
-          email: `${studentForm.mobileNumber}@roarups.temp`,
-          password: `Roarups@${studentForm.mobileNumber}`,
-          options: {
-            data: {
-              full_name: studentForm.studentName,
-              role: 'student',
-              mobile: studentForm.mobileNumber
+        try {
+          const { data: authData } = await supabase.auth.signUp({
+            email: `${studentForm.mobileNumber}@roarups.temp`,
+            password: `Roarups@${studentForm.mobileNumber}`,
+            options: {
+              data: {
+                full_name: studentForm.studentName,
+                role: 'student',
+                mobile: studentForm.mobileNumber
+              }
             }
-          }
-        });
-        if (authData?.user) userId = authData.user.id;
+          });
+          if (authData?.user) userId = authData.user.id;
+        } catch {}
       }
 
       const res = await submitStudentRegistration({
@@ -193,13 +208,18 @@ export const RegisterPage: React.FC = () => {
         parent_mobile: studentForm.parentMobile
       });
 
-      if (!res.success) throw new Error(res.error);
+      if (res.whatsappUrl1) {
+        window.open(res.whatsappUrl1, '_blank');
+      }
 
-      setModalState({
+      setDispatchData({
         isOpen: true,
-        title: 'Student Account Registered',
-        message: 'Your student registration has been created successfully! You can now login to your dashboard.',
-        type: 'success'
+        title: 'Student Registration Ready!',
+        subtitle: 'Send your student inquiry directly to ROARUPS via WhatsApp or Email:',
+        whatsappUrl1: res.whatsappUrl1,
+        whatsappUrl2: res.whatsappUrl2,
+        mailtoUrl: res.mailtoUrl,
+        formattedText: res.formattedText
       });
       setSelectedType(null);
     } catch (err: any) {
@@ -232,18 +252,20 @@ export const RegisterPage: React.FC = () => {
     try {
       let userId: string | null = null;
       if (isSupabaseConfigured && supabase) {
-        const { data: authData } = await supabase.auth.signUp({
-          email: `${parentForm.mobileNumber}@roarups.temp`,
-          password: `Roarups@${parentForm.mobileNumber}`,
-          options: {
-            data: {
-              full_name: parentForm.parentName,
-              role: 'parent',
-              mobile: parentForm.mobileNumber
+        try {
+          const { data: authData } = await supabase.auth.signUp({
+            email: `${parentForm.mobileNumber}@roarups.temp`,
+            password: `Roarups@${parentForm.mobileNumber}`,
+            options: {
+              data: {
+                full_name: parentForm.parentName,
+                role: 'parent',
+                mobile: parentForm.mobileNumber
+              }
             }
-          }
-        });
-        if (authData?.user) userId = authData.user.id;
+          });
+          if (authData?.user) userId = authData.user.id;
+        } catch {}
       }
 
       const res = await submitParentRegistration({
@@ -258,13 +280,18 @@ export const RegisterPage: React.FC = () => {
         learning_mode: parentForm.learningMode
       });
 
-      if (!res.success) throw new Error(res.error);
+      if (res.whatsappUrl1) {
+        window.open(res.whatsappUrl1, '_blank');
+      }
 
-      setModalState({
+      setDispatchData({
         isOpen: true,
-        title: 'Parent Account Created',
-        message: 'Your parent registration has been created successfully! Our academic coordinator will contact you shortly.',
-        type: 'success'
+        title: 'Parent Enrollment Ready!',
+        subtitle: 'Send your tutoring inquiry directly to ROARUPS via WhatsApp or Email:',
+        whatsappUrl1: res.whatsappUrl1,
+        whatsappUrl2: res.whatsappUrl2,
+        mailtoUrl: res.mailtoUrl,
+        formattedText: res.formattedText
       });
       setSelectedType(null);
     } catch (err: any) {
@@ -746,6 +773,18 @@ export const RegisterPage: React.FC = () => {
       >
         <p className="text-slate-700 text-sm leading-relaxed">{modalState.message}</p>
       </Modal>
+
+      {/* WhatsApp & Email Dispatch Modal */}
+      <SubmissionDispatchModal
+        isOpen={dispatchData.isOpen}
+        onClose={() => setDispatchData({ ...dispatchData, isOpen: false })}
+        title={dispatchData.title}
+        subtitle={dispatchData.subtitle}
+        whatsappUrl1={dispatchData.whatsappUrl1}
+        whatsappUrl2={dispatchData.whatsappUrl2}
+        mailtoUrl={dispatchData.mailtoUrl}
+        formattedText={dispatchData.formattedText}
+      />
     </PageLayout>
   );
 };

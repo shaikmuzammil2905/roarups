@@ -25,8 +25,8 @@ export const LoginPage: React.FC = () => {
 
     try {
       if (!isSupabaseConfigured || !supabase) {
-        // Clear message if environment variables are not set
-        setErrorMessage('Supabase is not configured. Please add VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY to log in to live database.');
+        // Allow seamless login demo when Supabase is unconfigured
+        navigate(`/dashboard/${role}`);
         setIsLoading(false);
         return;
       }

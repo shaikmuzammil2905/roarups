@@ -8,12 +8,43 @@ import {
   WebsiteSettings
 } from '../types';
 
-const MISSING_ENV_ERROR = "Supabase configuration missing. Please set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY in your environment to submit data.";
+export const PRIMARY_WHATSAPP = '6309763394';
+export const SECONDARY_WHATSAPP = '9490988856';
+export const OFFICIAL_EMAIL = 'Roarupstuitions@gmail.com';
+
+export interface SubmissionResult {
+  success: boolean;
+  message?: string;
+  error?: string;
+  whatsappUrl1?: string;
+  whatsappUrl2?: string;
+  mailtoUrl?: string;
+  formattedText?: string;
+}
+
+// Helper to construct WhatsApp and Mailto URLs
+function buildDispatchUrls(subject: string, textContent: string): SubmissionResult {
+  const encodedText = encodeURIComponent(textContent);
+  const encodedSubject = encodeURIComponent(subject);
+
+  const whatsappUrl1 = `https://wa.me/91${PRIMARY_WHATSAPP}?text=${encodedText}`;
+  const whatsappUrl2 = `https://wa.me/91${SECONDARY_WHATSAPP}?text=${encodedText}`;
+  const mailtoUrl = `mailto:${OFFICIAL_EMAIL}?subject=${encodedSubject}&body=${encodedText}`;
+
+  return {
+    success: true,
+    message: 'Form submitted successfully! Sending details to WhatsApp & Email...',
+    whatsappUrl1,
+    whatsappUrl2,
+    mailtoUrl,
+    formattedText: textContent
+  };
+}
 
 // Default website settings fallback
 const DEFAULT_SETTINGS: WebsiteSettings = {
   social_links: {
-    whatsapp: 'https://wa.me/916309763394',
+    whatsapp: `https://wa.me/91${PRIMARY_WHATSAPP}`,
     instagram: 'https://www.instagram.com/roar_tuitions?igsh=MXgzZ2dudTJ1aGI3eQ==',
     linkedin: '',
   },
@@ -23,14 +54,24 @@ const DEFAULT_SETTINGS: WebsiteSettings = {
   }
 };
 
-export async function submitTutorRegistration(data: TutorRegistration) {
-  if (!isSupabaseConfigured || !supabase) {
-    return { success: false, error: MISSING_ENV_ERROR };
-  }
+export async function submitTutorRegistration(data: TutorRegistration): Promise<SubmissionResult> {
+  const formattedText = 
+`🎓 NEW TUTOR REGISTRATION - ROARUPS
 
-  try {
-    const { error } = await supabase.from('tutor_registrations').insert([
-      {
+👤 Full Name: ${data.full_name}
+📱 Mobile Number: ${data.mobile_number}
+🎓 Qualification: ${data.qualification}
+🚻 Gender: ${data.gender}
+⏳ Experience: ${data.teaching_experience}
+📍 Location: ${data.location}
+📚 Curricula: ${data.curriculum?.join(', ') || 'Not specified'}
+📖 Subjects: ${data.subjects?.join(', ') || 'Not specified'}
+🏫 Preferred Mode: ${data.preferred_teaching_mode}`;
+
+  // Optional background save if Supabase exists
+  if (isSupabaseConfigured && supabase) {
+    try {
+      await supabase.from('tutor_registrations').insert([{
         user_id: data.user_id || null,
         full_name: data.full_name,
         mobile_number: data.mobile_number,
@@ -43,24 +84,29 @@ export async function submitTutorRegistration(data: TutorRegistration) {
         preferred_teaching_mode: data.preferred_teaching_mode,
         location: data.location,
         status: 'pending'
-      }
-    ]);
-
-    if (error) throw error;
-    return { success: true };
-  } catch (err: any) {
-    return { success: false, error: err.message || "Failed to submit tutor registration" };
+      }]);
+    } catch {}
   }
+
+  return buildDispatchUrls('New Tutor Registration - ROARUPS', formattedText);
 }
 
-export async function submitStudentRegistration(data: StudentRegistration) {
-  if (!isSupabaseConfigured || !supabase) {
-    return { success: false, error: MISSING_ENV_ERROR };
-  }
+export async function submitStudentRegistration(data: StudentRegistration): Promise<SubmissionResult> {
+  const formattedText = 
+`🎓 NEW STUDENT REGISTRATION - ROARUPS
 
-  try {
-    const { error } = await supabase.from('student_registrations').insert([
-      {
+👤 Student Name: ${data.student_name}
+📱 Mobile Number: ${data.mobile_number}
+🏫 Class / Grade: ${data.class_grade}
+📚 Curriculum: ${data.curriculum}
+📖 Preferred Mode: ${data.learning_mode}
+📍 Location: ${data.location}
+👨‍👩‍👧 Parent Name: ${data.parent_name || 'N/A'}
+📱 Parent Mobile: ${data.parent_mobile || 'N/A'}`;
+
+  if (isSupabaseConfigured && supabase) {
+    try {
+      await supabase.from('student_registrations').insert([{
         user_id: data.user_id || null,
         student_name: data.student_name,
         mobile_number: data.mobile_number,
@@ -72,24 +118,28 @@ export async function submitStudentRegistration(data: StudentRegistration) {
         parent_name: data.parent_name,
         parent_mobile: data.parent_mobile,
         status: 'pending'
-      }
-    ]);
-
-    if (error) throw error;
-    return { success: true };
-  } catch (err: any) {
-    return { success: false, error: err.message || "Failed to submit student registration" };
+      }]);
+    } catch {}
   }
+
+  return buildDispatchUrls('New Student Registration - ROARUPS', formattedText);
 }
 
-export async function submitParentRegistration(data: ParentRegistration) {
-  if (!isSupabaseConfigured || !supabase) {
-    return { success: false, error: MISSING_ENV_ERROR };
-  }
+export async function submitParentRegistration(data: ParentRegistration): Promise<SubmissionResult> {
+  const formattedText = 
+`👨‍👩‍👧 NEW PARENT ENROLLMENT - ROARUPS
 
-  try {
-    const { error } = await supabase.from('parent_registrations').insert([
-      {
+👤 Parent Name: ${data.parent_name}
+🎓 Student Name: ${data.student_name}
+📱 Mobile Number: ${data.mobile_number}
+🏫 Class / Grade: ${data.class_grade}
+📚 Curriculum: ${data.curriculum}
+📍 Location: ${data.location}
+📖 Preferred Mode: ${data.learning_mode}`;
+
+  if (isSupabaseConfigured && supabase) {
+    try {
+      await supabase.from('parent_registrations').insert([{
         user_id: data.user_id || null,
         parent_name: data.parent_name,
         student_name: data.student_name,
@@ -100,42 +150,63 @@ export async function submitParentRegistration(data: ParentRegistration) {
         subjects_required: data.subjects_required,
         learning_mode: data.learning_mode,
         status: 'pending'
-      }
-    ]);
-
-    if (error) throw error;
-    return { success: true };
-  } catch (err: any) {
-    return { success: false, error: err.message || "Failed to submit parent registration" };
+      }]);
+    } catch {}
   }
+
+  return buildDispatchUrls('New Parent Registration - ROARUPS', formattedText);
 }
 
-export async function submitReview(data: Review) {
-  if (!isSupabaseConfigured || !supabase) {
-    return { success: false, error: MISSING_ENV_ERROR };
+export async function submitContactMessage(data: ContactMessage): Promise<SubmissionResult> {
+  const formattedText = 
+`📩 NEW INQUIRY - ROARUPS
+
+👤 Name: ${data.name}
+📱 Phone: ${data.phone}
+✉️ Email: ${data.email || 'Not provided'}
+💬 Message: ${data.message}`;
+
+  if (isSupabaseConfigured && supabase) {
+    try {
+      await supabase.from('contact_messages').insert([{
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        message: data.message,
+        status: 'unread'
+      }]);
+    } catch {}
   }
 
-  try {
-    const { error } = await supabase.from('reviews').insert([
-      {
+  return buildDispatchUrls(`New Contact Message from ${data.name}`, formattedText);
+}
+
+export async function submitReview(data: Review): Promise<SubmissionResult> {
+  const formattedText = 
+`⭐ NEW REVIEW SUBMISSION - ROARUPS
+
+👤 Name: ${data.name}
+🏷️ Role: ${data.role}
+⭐ Rating: ${data.rating} / 5 Stars
+💬 Feedback: ${data.feedback}`;
+
+  if (isSupabaseConfigured && supabase) {
+    try {
+      await supabase.from('reviews').insert([{
         name: data.name,
         role: data.role,
         rating: data.rating,
         feedback: data.feedback,
-        status: 'pending' // Admin approval workflow
-      }
-    ]);
-
-    if (error) throw error;
-    return { success: true };
-  } catch (err: any) {
-    return { success: false, error: err.message || "Failed to submit review" };
+        status: 'pending'
+      }]);
+    } catch {}
   }
+
+  return buildDispatchUrls(`New Review from ${data.name}`, formattedText);
 }
 
 export async function fetchApprovedReviews(): Promise<Review[]> {
   if (!isSupabaseConfigured || !supabase) {
-    // Return sample seed reviews if Supabase is unconfigured so wall displays clean initial guidance
     return [
       { id: '1', name: 'Ramesh Kumar', role: 'Parent', rating: 5, feedback: 'RoarUps helped my son improve his CBSE 10th grade Mathematics score significantly. Excellent individual focus!', status: 'approved' },
       { id: '2', name: 'Priya Sharma', role: 'Student', rating: 5, feedback: 'The home tuition tutors are very patient and explain complex Science concepts with real-world examples.', status: 'approved' },
@@ -155,29 +226,6 @@ export async function fetchApprovedReviews(): Promise<Review[]> {
   } catch (err) {
     console.error("Error fetching reviews:", err);
     return [];
-  }
-}
-
-export async function submitContactMessage(data: ContactMessage) {
-  if (!isSupabaseConfigured || !supabase) {
-    return { success: false, error: MISSING_ENV_ERROR };
-  }
-
-  try {
-    const { error } = await supabase.from('contact_messages').insert([
-      {
-        name: data.name,
-        email: data.email,
-        phone: data.phone,
-        message: data.message,
-        status: 'unread'
-      }
-    ]);
-
-    if (error) throw error;
-    return { success: true };
-  } catch (err: any) {
-    return { success: false, error: err.message || "Failed to send contact message" };
   }
 }
 

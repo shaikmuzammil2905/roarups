@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { PageLayout } from '../components/layout/PageLayout';
 import { Modal } from '../components/common/Modal';
+import { SubmissionDispatchModal } from '../components/common/SubmissionDispatchModal';
 import { fetchApprovedReviews, submitReview } from '../services/db';
 import { Review } from '../types';
 import { Star, MessageSquarePlus, Quote, CheckCircle2 } from 'lucide-react';
@@ -17,6 +18,15 @@ export const ReviewsPage: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const [modalState, setModalState] = useState({ isOpen: false, title: '', message: '', type: 'success' as 'success' | 'error' });
+  const [dispatchData, setDispatchData] = useState<{
+    isOpen: boolean;
+    title?: string;
+    subtitle?: string;
+    whatsappUrl1?: string;
+    whatsappUrl2?: string;
+    mailtoUrl?: string;
+    formattedText?: string;
+  }>({ isOpen: false });
 
   useEffect(() => {
     async function loadReviews() {
@@ -43,13 +53,19 @@ export const ReviewsPage: React.FC = () => {
 
     try {
       const res = await submitReview({ name, role, rating, feedback });
-      if (!res.success) throw new Error(res.error);
 
-      setModalState({
+      if (res.whatsappUrl1) {
+        window.open(res.whatsappUrl1, '_blank');
+      }
+
+      setDispatchData({
         isOpen: true,
-        title: 'Review Submitted',
-        message: 'Thank you for sharing your experience. Your review has been submitted for approval.',
-        type: 'success'
+        title: 'Review Ready to Send!',
+        subtitle: 'Send your testimonial directly to ROARUPS via WhatsApp or Email below:',
+        whatsappUrl1: res.whatsappUrl1,
+        whatsappUrl2: res.whatsappUrl2,
+        mailtoUrl: res.mailtoUrl,
+        formattedText: res.formattedText
       });
 
       setName('');
@@ -237,6 +253,17 @@ export const ReviewsPage: React.FC = () => {
       >
         <p className="text-slate-700 text-sm leading-relaxed">{modalState.message}</p>
       </Modal>
+
+      <SubmissionDispatchModal
+        isOpen={dispatchData.isOpen}
+        onClose={() => setDispatchData({ ...dispatchData, isOpen: false })}
+        title={dispatchData.title}
+        subtitle={dispatchData.subtitle}
+        whatsappUrl1={dispatchData.whatsappUrl1}
+        whatsappUrl2={dispatchData.whatsappUrl2}
+        mailtoUrl={dispatchData.mailtoUrl}
+        formattedText={dispatchData.formattedText}
+      />
     </PageLayout>
   );
 };

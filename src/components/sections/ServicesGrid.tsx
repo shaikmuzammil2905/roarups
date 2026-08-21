@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Home, Users, Laptop, ArrowRight } from 'lucide-react';
+import { ServicesTypingStats } from './ServicesTypingStats';
 
 export const ServicesGrid: React.FC = () => {
   const services = [
@@ -92,6 +93,9 @@ export const ServicesGrid: React.FC = () => {
             );
           })}
         </div>
+
+        {/* Typing Stats Bar below Our Services */}
+        <ServicesTypingStats />
       </div>
     </section>
   );
