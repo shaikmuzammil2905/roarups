@@ -124,7 +124,7 @@ const TypingStatCard: React.FC<TypingStatItemProps> = ({
 
 export const ServicesTypingStats: React.FC = () => {
   return (
-    <div className="mt-14 sm:mt-16">
+    <div className="mb-12 sm:mb-16">
       {/* Mobile-friendly Section Header */}
       <div className="text-center max-w-2xl mx-auto mb-8 px-4">
         <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-100 text-roar-navy font-bold text-xs uppercase tracking-wider mb-2">
