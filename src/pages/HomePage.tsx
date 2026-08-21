@@ -6,6 +6,7 @@ import { ServicesGrid } from '../components/sections/ServicesGrid';
 import { WhyChooseUs } from '../components/sections/WhyChooseUs';
 import { CurriculumBadges } from '../components/sections/CurriculumBadges';
 import { ReviewCarousel } from '../components/sections/ReviewCarousel';
+import { FounderSection } from '../components/sections/FounderSection';
 import { BottomFeatureBar } from '../components/sections/BottomFeatureBar';
 
 export const HomePage: React.FC = () => {
@@ -17,6 +18,7 @@ export const HomePage: React.FC = () => {
       <WhyChooseUs />
       <CurriculumBadges />
       <ReviewCarousel />
+      <FounderSection />
       <BottomFeatureBar />
     </PageLayout>
   );
